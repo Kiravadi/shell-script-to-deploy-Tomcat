@@ -86,15 +86,23 @@ mvn --version
 
 cd /home/ubuntu
 
+# Cloning git repo that has the working source code to local repo
+
 git clone https://github.com/shashirajraja/Train-Ticket-Reservation-System.git
 
 git clone https://github.com/shashirajraja/onlinebookstore.git
 
+#creating first build using onlinebookstore repo.
+# Creating .war inside the repo 
 cd /home/ubuntu/onlinebookstore
 
+# Command to start the build 
 mvn clean install package
 
+# Copying the Build files to the tomcat
 cd /home/ubuntu/onlinebookstore/target
 
 sudo mv onlinebookstore.war /opt/tomcat/webapps/
 sudo mv onlinebookstore /opt/tomcat/webapps/
+
+# application can we accessed at IP_address:8080/onlinebookstore/
